@@ -18,8 +18,7 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      connectionString: process.env.DATABASE_URL || `postgres://hagivgcqjgmsbg:1bd8e665245f4e4f2c9ee5fc63c2b5b0998b39a1d29ac8c956db6a1fdde6a6c3@ec2-44-197-128-108.compute-1.amazonaws.com:5432/d65nmhbo7htq0s`
-      ,
+      connectionString: process.env.DATABASE_URL,
       ssl: { rejectUnauthorized: false },
     },
     migrations: {
@@ -59,7 +58,7 @@ module.exports = {
   production: {
     client: "pg",
     connection: {
-      connectionString: process.env.DATABASE_URL || `postgres://ajtzstxipkjcka:fee3c68649f97f2314b1adaad1790b186a47b5f994f7fa68a29b8b7378bab779@ec2-44-205-41-76.compute-1.amazonaws.com:5432/d8hscs6ngf0eus`
+      connectionString: process.env.DATABASE_URL
       ,
       ssl: { rejectUnauthorized: false },
     },
