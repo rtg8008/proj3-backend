@@ -57,19 +57,18 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: "pg",
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      connectionString: process.env.DATABASE_URL || `postgres://ajtzstxipkjcka:fee3c68649f97f2314b1adaad1790b186a47b5f994f7fa68a29b8b7378bab779@ec2-44-205-41-76.compute-1.amazonaws.com:5432/d8hscs6ngf0eus`
+      ,
+      ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      directory: "./migrations",
+    },
+    seeds: {
+      directory: "./seeds",
+    },
+  },
 
 };
